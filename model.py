@@ -41,7 +41,7 @@ def weights_init_classifier(m):
 
 
 
-class build_transformer_local(nn.Module):
+class build_transformer(nn.Module):
     def __init__(self, num_classes, cfg, factory):
         super(build_transformer_local, self).__init__()
         model_path = cfg.MODEL.PRETRAIN_PATH
@@ -233,6 +233,6 @@ __factory_T_type = {
 
 
 def make_model(cfg, num_class):
-    model = build_transformer_local(num_class, cfg, __factory_T_type)
+    model = build_transformer(num_class, cfg, __factory_T_type)
     print('Rotated Vision Transformer')
     return model
